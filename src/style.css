@@ -15,10 +15,8 @@ body
     position: fixed;
     top: 0;
     left: 0;
-    width: 50vw;
-    height: 50vh;
     outline: none;
-    /* background-image: url("../static/assets/etoiles.jpg"); */
+    
 }
  .modal {
     position: fixed;
@@ -29,8 +27,8 @@ body
     transform: translate(-50%, -50%);
     border: 1px solid #fff;
     color: #fff;
-    opacity: 0;
     background: grey;
+    display: none;
  }
  .modal2 {
     position: fixed;
@@ -41,8 +39,32 @@ body
     transform: translate(-50%, -50%);
     border: 1px solid #fff;
     color: #fff;
-    opacity: 0;
     background: grey;
+    display: none;
+ }
+ .modal3 {
+    position: fixed;
+    height: 40%;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    color: #fff;
+    background: grey;
+    display: none;
+ }
+ .modal4 {
+    position: fixed;
+    height: 40%;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    color: #fff;
+    background: grey;
+    display: none;
  }
 
  

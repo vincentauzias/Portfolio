@@ -2,7 +2,7 @@ import './style.css'
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'dat.gui'
+// import * as dat from 'dat.gui'
 
 /**
  * Base
@@ -255,7 +255,12 @@ window.addEventListener('mousemove', (_event) => {
 
 const modal = document.querySelector('.modal')
 const modal2 = document.querySelector('.modal2')
-const toggleClose = document.querySelector('.toggle-close')
+const modal3 = document.querySelector('.modal3')
+const modal4 = document.querySelector('.modal4')
+let toggleClose = document.querySelector('.toggle-close')
+let toggleClose2 = document.querySelector('.toggle-close2')
+let toggleClose3 = document.querySelector('.toggle-close3')
+let toggleClose4 = document.querySelector('.toggle-close4')
   
 let toggle = false
 
@@ -267,50 +272,59 @@ window.addEventListener('click', () =>
         {
             case planet1:
                 toggle = !toggle
-                
                 if (toggle) {
-                    modal.style.opacity = 1
+                    modal.style.display = "block"
                 } else if (toggle === false) {
-                modal.style.opacity = 0
+                modal.style.display = "none"
                 }
-                console.log('click on object 1')
                 break
 
             case planet2:
                 toggle = !toggle
                 if (toggle) {
-                    modal2.style.opacity = 1
+                    modal2.style.display = "block"
                 } else if (toggle === false) {
-                   modal2.style.opacity = 0
-                }
-                
-                console.log('click on object 2')
+                   modal2.style.display = "none"
+                }               
                 break
 
             case planet3:
                 toggle = !toggle
-                
                 if (toggle) {
-                    modal.style.opacity = 1
+                    modal3.style.display = "block"
                 } else if (toggle === false) {
-                modal.style.opacity = 0
+                    modal3.style.display = "none"
                 }
-                console.log('click on object 3')
                 break
 
             case planet4:
                 toggle = !toggle
-                
                 if (toggle) {
-                    modal.style.opacity = 1
+                    modal4.style.display = "block"
                 } else if (toggle === false) {
-                modal.style.opacity = 0
+                    modal4.style.display = "none"
                 }
-                console.log('click on object 4')
                 break
 
         }
     }
+})
+
+toggleClose.addEventListener('click', () =>
+{
+    modal.style.display = 'none';
+})
+toggleClose2.addEventListener('click', () =>
+{
+    modal2.style.display = 'none';
+})
+toggleClose3.addEventListener('click', () =>
+{
+    modal3.style.display = 'none';
+})
+toggleClose4.addEventListener('click', () =>
+{
+    modal4.style.display = 'none';
 })
 
 /**
