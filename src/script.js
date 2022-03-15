@@ -38,6 +38,12 @@ const p2NormalTexture = textureLoader.load('/assets/p2_normal.png')
 const p2RoughnessTexture = textureLoader.load('/assets/p2_roughness.png')
 const p2AlbedoTexture = textureLoader.load('/assets/p2_albedo.png')
 const p2EmissiveTexture = textureLoader.load('/assets/p2_emissive.png')
+//planet 3
+const p3AmbientOcclusionTexture = textureLoader.load('/assets/p3_ao.png')
+const p3MetalnessTexture = textureLoader.load('/assets/p3_metallic.png')
+const p3NormalTexture = textureLoader.load('/assets/p3_normal.png')
+const p3RoughnessTexture = textureLoader.load('/assets/p3_roughness.png')
+const p3AlbedoTexture = textureLoader.load('/assets/p3_albedo.png')
 //planet 4
 const p4AmbientOcclusionTexture = textureLoader.load('/assets/p4_ao.png')
 const p4MetalnessTexture = textureLoader.load('/assets/p4_metallic.png')
@@ -199,12 +205,17 @@ planet2.cursor = 'pointer'
 const planet3 = new THREE.Mesh(
     new THREE.SphereBufferGeometry(0.38, 10, 10),
     new THREE.MeshStandardMaterial({
+        aoMap: p3AmbientOcclusionTexture,
+        metalnessMap: p3MetalnessTexture,
+        roughnessMap: p3RoughnessTexture,
+        normalMap: p3NormalTexture,
+        map: p3AlbedoTexture,
         metalness: 0.03,
         roughness: 0.04,
     })
 )
-planet3.position.x = 3
-planet3.position.y = 2
+planet3.position.x = 2.5
+planet3.position.y = -1
 planet3.position.z = 2
 planet3.cursor = 'pointer'
 
@@ -426,6 +437,8 @@ const tick = () =>
     planet1.rotation.y += 0.008
     planet2.rotation.x += 0.01
     planet2.rotation.z += 0.01
+    planet3.rotation.x += 0.005
+    planet3.rotation.y += 0.007
     planet4.rotation.y += 0.008
 
     // Update controls
