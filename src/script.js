@@ -8,7 +8,7 @@ import * as dat from 'dat.gui'
  * Base
  */
 // Debug
-const gui = new dat.GUI( {width: 360} )
+// const gui = new dat.GUI( {width: 360} )
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -427,7 +427,7 @@ const tick = () =>
     planet2.rotation.x += 0.01
     planet2.rotation.z += 0.01
     planet4.rotation.y += 0.008
-    
+
     // Update controls
     controls.update()
 
