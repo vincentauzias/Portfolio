@@ -399,15 +399,17 @@ scene.add(camera)
     if (!explorer) {
         gsap.to(camera.position, {
             delay: 0.5,
+            duration: 3,
             z: explorer ? 20 : 3,
-            ease: 'power2.easeInOut',
+            ease: 'power3.inOut',
         })
         explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
     } else if (explorer) {
         gsap.to(camera.position, {
             delay: 0.5,
+            duration: 3,
             z: explorer ? 20 : 3,
-            ease: 'power2.easeInOut',
+            ease: 'power3.inOut',
         })
         explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
     }
