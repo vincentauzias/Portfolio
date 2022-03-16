@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap');
 *
 {
     margin: 0;
@@ -43,12 +44,16 @@ body {
 }
 
 .title h1 {
+    font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
     font-size: 5rem;
 }
 
 .title p {
+    font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
+    font-size: 2rem;
+    
 }
 
 .explore {
@@ -56,10 +61,12 @@ body {
     padding: 0.5rem 1rem;
     margin-top: 2rem;
     border: none;
-    border-radius: 3rem;
+    border-radius: 3px;
     font-weight: 500;
     background-color: #0072ff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     text-transform: uppercase;
+    font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
 }
  .modal {
@@ -103,12 +110,16 @@ body {
     height: 40%;
     width: 40%;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    border: 1px solid #fff;
-    color: #fff;
-    background: grey;
     display: none;
+    border: 1px solid #00fff3;
+    color: #00FFF2;
+    background: transparent;
+    cursor: pointer;
+   
+ 
+
  }
  .categorie {
      position: fixed;
@@ -120,4 +131,4 @@ body {
 
  }
 
- 
+

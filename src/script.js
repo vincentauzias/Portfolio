@@ -83,7 +83,7 @@ scene.add( pointLight2 )
 //  *  Galaxy
 //  */
 const parameters = {}
-parameters.count = 50000
+parameters.count = 100000
 parameters.size = 0.01
 parameters.radius = 5
 parameters.branches = 3
@@ -276,7 +276,7 @@ window.addEventListener('click', () =>
                 if (toggle) {
                     modal.style.display = "block"
                 } else if (toggle === false) {
-                modal.style.display = "none"
+                    modal.style.display = "none"
                 }
                 break
 
@@ -376,7 +376,7 @@ window.addEventListener('resize', () =>
  *  Explore
  */
 const explore = document.querySelector('.explore')
-var explorer = true
+let explorer = true
 
 
 
@@ -424,6 +424,7 @@ loader.load('/assets/etoiles.jpg' , function(texture) {
     scene.background = texture;  
 });
 
+
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
@@ -462,18 +463,17 @@ const tick = () =>
     const intersects = raycaster.intersectObjects(objectsToTest)
   
 
+    //group rotation
     if(intersects.length) {
         if(!currentIntersect) {
             console.log('mouse enter');
+            group.rotation.y += 0
         }
-
         currentIntersect = intersects[0]
     } else {
         currentIntersect = null
+        group.rotation.y += 0.002;
     }
-
-    //group rotation
-    group.rotation.y += 0.002;
 
     // planets rotation
     planet1.rotation.x += 0.008
