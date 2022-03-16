@@ -2,6 +2,7 @@ import './style.css'
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { gsap } from 'gsap'
 // import * as dat from 'dat.gui'
 
 /**
@@ -310,20 +311,16 @@ window.addEventListener('click', () =>
     }
 })
 
-toggleClose.addEventListener('click', () =>
-{
+toggleClose.addEventListener('click', () => {
     modal.style.display = 'none';
 })
-toggleClose2.addEventListener('click', () =>
-{
+toggleClose2.addEventListener('click', () => {
     modal2.style.display = 'none';
 })
-toggleClose3.addEventListener('click', () =>
-{
+toggleClose3.addEventListener('click', () => {
     modal3.style.display = 'none';
 })
-toggleClose4.addEventListener('click', () =>
-{
+toggleClose4.addEventListener('click', () => {
     modal4.style.display = 'none';
 })
 
@@ -351,7 +348,6 @@ toggleClose4.addEventListener('click', () =>
 //  gui.add(parameters, 'randomnessPower').min(1).max(10).step(0.001).onFinishChange(generateGalaxy)
 //  gui.addColor(parameters, 'insideColor').onFinishChange(generateGalaxy)
 //  gui.addColor(parameters, 'outsideColor').onFinishChange(generateGalaxy)
- 
 
 /**
  * Sizes
@@ -377,23 +373,54 @@ window.addEventListener('resize', () =>
 })
 
 /**
+ *  Explore
+ */
+const explore = document.querySelector('.explore')
+var explorer = true
+
+
+
+/**
  * Camera
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 3
 camera.position.y = 3
-camera.position.z = 3
+camera.position.z = 20
 scene.add(camera)
+
+/**
+ * Explore click
+ */
+ explore.addEventListener('click', () => {
+    
+    explorer = !explorer
+    if (!explorer) {
+        gsap.to(camera.position, {
+            delay: 0.5,
+            z: explorer ? 20 : 3,
+            ease: 'power2.easeInOut',
+        })
+        explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
+    } else if (explorer) {
+        gsap.to(camera.position, {
+            delay: 0.5,
+            z: explorer ? 20 : 3,
+            ease: 'power2.easeInOut',
+        })
+        explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
+    }
+    
+})
 
 /**
  *  Background
  */
 const loader = new THREE.TextureLoader();
-loader.load('/assets/etoiles.jpg' , function(texture)
-            {
-             scene.background = texture;  
-            });
+loader.load('/assets/etoiles.jpg' , function(texture) {
+    scene.background = texture;  
+});
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
