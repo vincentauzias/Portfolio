@@ -262,8 +262,6 @@ let toggleClose = document.querySelector('.toggle-close')
 let toggleClose2 = document.querySelector('.toggle-close2')
 let toggleClose3 = document.querySelector('.toggle-close3')
 let toggleClose4 = document.querySelector('.toggle-close4')
-  
-let toggle = false
 
 window.addEventListener('click', () =>
 {
@@ -272,41 +270,36 @@ window.addEventListener('click', () =>
         switch(currentIntersect.object)
         {
             case planet1:
-                toggle = !toggle
-                if (toggle) {
+                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal.style.display = "block"
-                } else if (toggle === false) {
+                } else {
                     modal.style.display = "none"
                 }
                 break
 
             case planet2:
-                toggle = !toggle
-                if (toggle) {
+                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal2.style.display = "block"
-                } else if (toggle === false) {
-                   modal2.style.display = "none"
-                }               
+                } else {
+                    modal2.style.display = "none"
+                }              
                 break
 
             case planet3:
-                toggle = !toggle
-                if (toggle) {
+                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal3.style.display = "block"
-                } else if (toggle === false) {
+                } else {
                     modal3.style.display = "none"
                 }
                 break
 
             case planet4:
-                toggle = !toggle
-                if (toggle) {
+                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal4.style.display = "block"
-                } else if (toggle === false) {
+                } else {
                     modal4.style.display = "none"
                 }
                 break
-
         }
     }
 })
@@ -474,6 +467,8 @@ const tick = () =>
         currentIntersect = null
         group.rotation.y += 0.002;
     }
+
+
 
     // planets rotation
     planet1.rotation.x += 0.008
