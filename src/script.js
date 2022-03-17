@@ -468,8 +468,6 @@ const tick = () =>
         group.rotation.y += 0.002;
     }
 
-
-
     // planets rotation
     planet1.rotation.x += 0.008
     planet1.rotation.y += 0.008
