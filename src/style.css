@@ -71,6 +71,7 @@ body {
     color: whitesmoke;
 }
  .modal {
+    position: fixed;
     height: 100vh;
     width: 40%;
     top: 0;
@@ -80,6 +81,7 @@ body {
     box-shadow: inset 0 4px 15px 0 #0072ff, inset 0 6px 150px 0 #0072ff, 10px 4px 15px 0 #a9c7eb, 0 6px 150px 0 #0072ff;
  }
  .modal2 {
+    position: fixed;
     height: 100vh;
     width: 40%;
     top: 0;
