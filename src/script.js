@@ -27,11 +27,11 @@ const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
 
 //planet 1
-const ob1AmbientOcclusionTexture = textureLoader.load('/assets/s_ao.png')
-const ob1MetalnessTexture = textureLoader.load('/assets/s_metallic.png')
-const ob1NormalTexture = textureLoader.load('/assets/s_normal.png')
-const ob1RoughnessTexture = textureLoader.load('/assets/s_roughness.png')
-const ob1AlbedoTexture = textureLoader.load('/assets/s_albedo.png')
+const p1AmbientOcclusionTexture = textureLoader.load('assets/p1_ao.png')
+const p1MetalnessTexture = textureLoader.load('assets/p1_metallic.png')
+const p1NormalTexture = textureLoader.load('assets/p1_normal.png')
+const p1RoughnessTexture = textureLoader.load('assets/p1_roughness.png')
+const p1AlbedoTexture = textureLoader.load('assets/p1_albedo.png')
 //planet 2
 const p2AmbientOcclusionTexture = textureLoader.load('/assets/p2_ao.png')
 const p2MetalnessTexture = textureLoader.load('/assets/p2_metallic.png')
@@ -169,11 +169,11 @@ generateGalaxy()
 const planet1 = new THREE.Mesh(
     new THREE.SphereBufferGeometry(0.4, 15, 15),
     new THREE.MeshStandardMaterial({
-        aoMap: ob1AmbientOcclusionTexture,
-        metalnessMap: ob1MetalnessTexture,
-        roughnessMap: ob1RoughnessTexture,
-        normalMap: ob1NormalTexture,
-        map: ob1AlbedoTexture,
+        aoMap: p1AmbientOcclusionTexture,
+        metalnessMap: p1MetalnessTexture,
+        roughnessMap: p1RoughnessTexture,
+        normalMap: p1NormalTexture,
+        map: p1AlbedoTexture,
         metalness: 0.03,
         roughness: 0.04,
     })
@@ -270,7 +270,7 @@ window.addEventListener('click', () =>
         switch(currentIntersect.object)
         {
             case planet1:
-                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
+                if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal.style.display = "block"
                 } else {
                     modal.style.display = "none"
@@ -278,7 +278,7 @@ window.addEventListener('click', () =>
                 break
 
             case planet2:
-                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
+                if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal2.style.display = "block"
                 } else {
                     modal2.style.display = "none"
@@ -286,7 +286,7 @@ window.addEventListener('click', () =>
                 break
 
             case planet3:
-                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
+                if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal3.style.display = "block"
                 } else {
                     modal3.style.display = "none"
@@ -294,7 +294,7 @@ window.addEventListener('click', () =>
                 break
 
             case planet4:
-                if(modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
+                if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                     modal4.style.display = "block"
                 } else {
                     modal4.style.display = "none"
@@ -391,16 +391,14 @@ scene.add(camera)
     explorer = !explorer
     if (!explorer) {
         gsap.to(camera.position, {
-            delay: 0.5,
-            duration: 3,
+            duration: 2,
             z: explorer ? 20 : 3,
             ease: 'power3.inOut',
         })
         explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
     } else if (explorer) {
         gsap.to(camera.position, {
-            delay: 0.5,
-            duration: 3,
+            duration: 2,
             z: explorer ? 20 : 3,
             ease: 'power3.inOut',
         })
@@ -408,6 +406,7 @@ scene.add(camera)
     }
     
 })
+
 
 /**
  *  Background

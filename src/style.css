@@ -47,12 +47,14 @@ body {
     font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
     font-size: 5rem;
+    pointer-events: none;
 }
 
 .title p {
     font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
     font-size: 2rem;
+    pointer-events: none;
     
 }
 
