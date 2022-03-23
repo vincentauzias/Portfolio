@@ -19,6 +19,8 @@
 
       $headers = 'MIME-Version: 1.0'."\r\n";
       $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+      $headers .= "From: $email" . "\r\n";
+        $headers .= "Reply-To: $email";
 
       mail($destinataire, $subject, $content, $headers);
       header("location:index.html"); 

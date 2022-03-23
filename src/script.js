@@ -15,7 +15,7 @@ const mediaQueryListDesktop = window.matchMedia("(min-width: 426px)")
 const mediaQueryListMobile = window.matchMedia("(max-width: 425px)")
 
 if (mediaQueryListDesktop.matches) {
-    
+
     // Canvas
     const canvas = document.querySelector('canvas.webgl')
 
@@ -450,7 +450,6 @@ if (mediaQueryListDesktop.matches) {
         //group rotation
         if(intersects.length) {
             if(!currentIntersect) {
-                console.log('mouse enter');
                 group.rotation.y += 0
             }
             currentIntersect = intersects[0]
@@ -488,6 +487,15 @@ if (mediaQueryListDesktop.matches) {
 
     // Canvas
     const canvas = document.querySelector('canvas.webgl')
+
+    const modal = document.querySelector('.modal')
+    const modal2 = document.querySelector('.modal2')
+    const modal3 = document.querySelector('.modal3')
+    const modal4 = document.querySelector('.modal4')
+    modal.style.display = "block"
+    modal2.style.display = "block"
+    modal3.style.display = "block"
+    modal4.style.display = "block"
     
     // Scene
     const scene = new THREE.Scene()
@@ -746,9 +754,9 @@ if (mediaQueryListDesktop.matches) {
      */
     // Base camera
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-    camera.position.x = 3
+    camera.position.x =0
     camera.position.y = 3
-    camera.position.z = 20
+    camera.position.z = 30
     scene.add(camera)
     
     /**
@@ -760,21 +768,38 @@ if (mediaQueryListDesktop.matches) {
         if (!explorer) {
             gsap.to(camera.position, {
                 duration: 2,
-                z: explorer ? 20 : 3,
+                z: explorer ? 30 : 8,
+                y: explorer ? 3 : 2,
                 ease: 'power3.inOut',
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
         } else if (explorer) {
             gsap.to(camera.position, {
                 duration: 2,
-                z: explorer ? 20 : 3,
+                z: explorer ? 30 : 8,
                 ease: 'power3.inOut',
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
         }
         
     })
-    
+
+    /**
+     *  Click on Zoom
+     */
+
+    const container = document.querySelector('.container')
+
+    explore.addEventListener('click', () =>
+    {
+        
+        if(camera.position.z > 10) {
+            container.style.overflow = 'visible'
+        } else {
+            container.style.overflow = 'hidden'
+        }
+    })
+
     /**
      *  Background
      */
@@ -782,10 +807,6 @@ if (mediaQueryListDesktop.matches) {
     loader.load('/assets/etoiles.jpg' , function(texture) {
         scene.background = texture;  
     });
-    
-    // Controls
-    const controls = new OrbitControls(camera, canvas)
-    controls.enableDamping = true
     
     /**
      * Renderer
@@ -816,9 +837,6 @@ if (mediaQueryListDesktop.matches) {
         planet3.rotation.y += 0.007
         planet4.rotation.y += 0.008
     
-        // Update controls
-        controls.update()
-    
         // Render
         renderer.render(scene, camera)
     
@@ -828,4 +846,3 @@ if (mediaQueryListDesktop.matches) {
     
     tick()
 }
-
