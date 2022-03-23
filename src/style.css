@@ -9,7 +9,6 @@
 html,
 body,
 .container {
-    /* overflow: hidden; */
     height: 100%;
 }
 
@@ -68,8 +67,6 @@ body,
     border-radius: 3px;
     font-weight: 500;
     background-color: #0072ff;
-    /* background-color: #00fff3; */
-    /* box-shadow: #00fff3 0px 25px 50px -12px; */
     text-transform: uppercase;
     font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
@@ -110,9 +107,6 @@ body,
     width: 40%;
     top: 0;
     right: 0;
-    /* margin: 10px 5px; */
-    /* display: none; */
-    /* border: 1px solid #00fff3; */
     color: whitesmoke;
     background: transparent;
     box-shadow: inset 0 4px 15px 0 #0072ff, inset 0 6px 150px 0 #0072ff, 10px 4px 15px 0 #a9c7eb, 0 6px 150px 0 #0072ff;
@@ -125,8 +119,36 @@ body,
     .container {
         overflow: hidden;
         height: 100%;
+        width: 100%;
     }
 
+    .scroller {
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+
+    .scroller section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        height: 100vh;
+        width: 100%;
+        scroll-snap-align: center;
+    }
+
+    section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        height: 100vh;
+        width: 100%;
+    }
     .title-container {
         position: absolute;
         width: 100%;
@@ -163,16 +185,6 @@ body,
         font-family: 'Chakra Petch', sans-serif;
         color: whitesmoke;
         top: 60%;
-    }
-
-    section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        height: 100%;
-        width: 100%;
     }
 
     .scrolldown { 
@@ -212,32 +224,8 @@ body,
     
     .modal, .modal2, .modal3, .modal4 {
         position: absolute;
-        height: 100%;
+        height: 100vh;
         width: 100%;
-    }
-
-    .home {
-        color: yellow;
-        scroll-snap-type: y mandatory;
-    }
-
-    .about {
-        color: red;
-        scroll-snap-type: y mandatory;
-    }
-
-    .work {
-        color: blue;
-        scroll-snap-type: y mandatory;
-    }
-
-    .techno {
-        color: green;
-        scroll-snap-type: y mandatory;
-    }
-
-    .contact {
-        scroll-snap-type: y mandatory;
     }
 
     @keyframes animate {
