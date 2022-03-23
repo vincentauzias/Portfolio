@@ -748,6 +748,11 @@ if (mediaQueryListDesktop.matches) {
      */
     const explore = document.querySelector('.explore')
     let explorer = true
+
+    /**
+     *  Scrolldown & up
+     */
+
     
     /**
      * Camera
@@ -789,14 +794,19 @@ if (mediaQueryListDesktop.matches) {
      */
 
     const container = document.querySelector('.container')
+    const scrolldown = document.querySelector('.scrolldown')
+    scrolldown.style.display = 'none'
 
     explore.addEventListener('click', () =>
     {
         
         if(camera.position.z > 10) {
             container.style.overflow = 'visible'
+            scrolldown.style.display = 'block'
         } else {
             container.style.overflow = 'hidden'
+            scrolldown.style.display = 'none'
+            
         }
     })
 
