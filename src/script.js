@@ -31,57 +31,31 @@ if (mediaQueryListDesktop.matches) {
      */
     const textureLoader = new THREE.TextureLoader()
 
-        //planet 1
-        // const p1AmbientOcclusionTexture = textureLoader.load('assets/p1_ao.png')
-        // const p1MetalnessTexture = textureLoader.load('assets/p1_metallic.png')
-        // const p1NormalTexture = textureLoader.load('assets/p1_normal.png')
-        // const p1RoughnessTexture = textureLoader.load('assets/p1_roughness.png')
-        // const p1AlbedoTexture = textureLoader.load('assets/p1_albedo.png')
-        // //planet 2
-        // const p2AmbientOcclusionTexture = textureLoader.load('/assets/p2_ao.png')
-        // const p2MetalnessTexture = textureLoader.load('/assets/p2_metallic.png')
-        // const p2NormalTexture = textureLoader.load('/assets/p2_normal.png')
-        // const p2RoughnessTexture = textureLoader.load('/assets/p2_roughness.png')
-        // const p2AlbedoTexture = textureLoader.load('/assets/p2_albedo.png')
-        // const p2EmissiveTexture = textureLoader.load('/assets/p2_emissive.png')
-        // //planet 3
-        // const p3AmbientOcclusionTexture = textureLoader.load('/assets/p3_ao.png')
-        // const p3MetalnessTexture = textureLoader.load('/assets/p3_metallic.png')
-        // const p3NormalTexture = textureLoader.load('/assets/p3_normal.png')
-        // const p3RoughnessTexture = textureLoader.load('/assets/p3_roughness.png')
-        // const p3AlbedoTexture = textureLoader.load('/assets/p3_albedo.png')
-        // //planet 4
-        // const p4AmbientOcclusionTexture = textureLoader.load('/assets/p4_ao.png')
-        // const p4MetalnessTexture = textureLoader.load('/assets/p4_metallic.png')
-        // const p4NormalTexture = textureLoader.load('/assets/p4_normal.png')
-        // const p4RoughnessTexture = textureLoader.load('/assets/p4_roughness.png')
-        // const p4AlbedoTexture = textureLoader.load('/assets/p4_albedo.png')
-
-                //planet 1
-                const p1AmbientOcclusionTexture = textureLoader.load('assets/p1_ao.webp')
-                const p1MetalnessTexture = textureLoader.load('assets/p1_metallic.webp')
-                const p1NormalTexture = textureLoader.load('assets/p1_normal.webp')
-                const p1RoughnessTexture = textureLoader.load('assets/p1_roughness.webp')
-                const p1AlbedoTexture = textureLoader.load('assets/p1_albedo.webp')
-                //planet 2
-                const p2AmbientOcclusionTexture = textureLoader.load('/assets/p2_ao.webp')
-                const p2MetalnessTexture = textureLoader.load('/assets/p2_metallic.webp')
-                const p2NormalTexture = textureLoader.load('/assets/p2_normal.webp')
-                const p2RoughnessTexture = textureLoader.load('/assets/p2_roughness.webp')
-                const p2AlbedoTexture = textureLoader.load('/assets/p2_albedo.webp')
-                const p2EmissiveTexture = textureLoader.load('/assets/p2_emissive.webp')
-                //planet 3
-                const p3AmbientOcclusionTexture = textureLoader.load('/assets/p3_ao.webp')
-                const p3MetalnessTexture = textureLoader.load('/assets/p3_metallic.webp')
-                const p3NormalTexture = textureLoader.load('/assets/p3_normal.webp')
-                const p3RoughnessTexture = textureLoader.load('/assets/p3_roughness.webp')
-                const p3AlbedoTexture = textureLoader.load('/assets/p3_albedo.webp')
-                //planet 4
-                const p4AmbientOcclusionTexture = textureLoader.load('/assets/p4_ao.webp')
-                const p4MetalnessTexture = textureLoader.load('/assets/p4_metallic.webp')
-                const p4NormalTexture = textureLoader.load('/assets/p4_normal.webp')
-                const p4RoughnessTexture = textureLoader.load('/assets/p4_roughness.webp')
-                const p4AlbedoTexture = textureLoader.load('/assets/p4_albedo.webp')
+    //planet 1
+    const p1AmbientOcclusionTexture = textureLoader.load('assets/p1_ao.webp')
+    const p1MetalnessTexture = textureLoader.load('assets/p1_metallic.webp')
+    const p1NormalTexture = textureLoader.load('assets/p1_normal.webp')
+    const p1RoughnessTexture = textureLoader.load('assets/p1_roughness.webp')
+    const p1AlbedoTexture = textureLoader.load('assets/p1_albedo.webp')
+    //planet 2
+    const p2AmbientOcclusionTexture = textureLoader.load('/assets/p2_ao.webp')
+    const p2MetalnessTexture = textureLoader.load('/assets/p2_metallic.webp')
+    const p2NormalTexture = textureLoader.load('/assets/p2_normal.webp')
+    const p2RoughnessTexture = textureLoader.load('/assets/p2_roughness.webp')
+    const p2AlbedoTexture = textureLoader.load('/assets/p2_albedo.webp')
+    const p2EmissiveTexture = textureLoader.load('/assets/p2_emissive.webp')
+    //planet 3
+    const p3AmbientOcclusionTexture = textureLoader.load('/assets/p3_ao.webp')
+    const p3MetalnessTexture = textureLoader.load('/assets/p3_metallic.webp')
+    const p3NormalTexture = textureLoader.load('/assets/p3_normal.webp')
+    const p3RoughnessTexture = textureLoader.load('/assets/p3_roughness.webp')
+    const p3AlbedoTexture = textureLoader.load('/assets/p3_albedo.webp')
+    //planet 4
+    const p4AmbientOcclusionTexture = textureLoader.load('/assets/p4_ao.webp')
+    const p4MetalnessTexture = textureLoader.load('/assets/p4_metallic.webp')
+    const p4NormalTexture = textureLoader.load('/assets/p4_normal.webp')
+    const p4RoughnessTexture = textureLoader.load('/assets/p4_roughness.webp')
+    const p4AlbedoTexture = textureLoader.load('/assets/p4_albedo.webp')
 
 
 
@@ -288,10 +262,10 @@ if (mediaQueryListDesktop.matches) {
     const modal2 = document.querySelector('.modal2')
     const modal3 = document.querySelector('.modal3')
     const modal4 = document.querySelector('.modal4')
-    // let toggleClose = document.querySelector('.toggle-close')
-    // let toggleClose2 = document.querySelector('.toggle-close2')
-    // let toggleClose3 = document.querySelector('.toggle-close3')
-    // let toggleClose4 = document.querySelector('.toggle-close4')
+    let toggleClose = document.querySelector('.toggle-close')
+    let toggleClose2 = document.querySelector('.toggle-close2')
+    let toggleClose3 = document.querySelector('.toggle-close3')
+    let toggleClose4 = document.querySelector('.toggle-close4')
 
     window.addEventListener('click', () =>
     {
@@ -334,18 +308,67 @@ if (mediaQueryListDesktop.matches) {
         }
     })
 
-    // toggleClose.addEventListener('click', () => {
-    //     modal.style.display = 'none';
-    // })
-    // toggleClose2.addEventListener('click', () => {
-    //     modal2.style.display = 'none';
-    // })
-    // toggleClose3.addEventListener('click', () => {
-    //     modal3.style.display = 'none';
-    // })
-    // toggleClose4.addEventListener('click', () => {
-    //     modal4.style.display = 'none';
-    // })
+    document.querySelector('.openModal').addEventListener('click', () => {
+        if (modal.style.height == '5vh') {
+            modal.style.height = '100vh'
+            document.querySelector('.modalTitle').style.display = 'none'
+            document.querySelector('.modalContent').style.display= 'block'
+        } else {
+            modal.style.height = '5vh'
+            document.querySelector('.modalTitle').style.display = 'block'
+            document.querySelector('.modalContent').style.display= 'none'
+        }
+    })
+
+    document.querySelector('.openModal2').addEventListener('click', () => {
+        if (modal2.style.height == '5vh') {
+            modal2.style.height = '100vh'
+            document.querySelector('.modalTitle2').style.display = 'none'
+            document.querySelector('.modalContent2').style.display= 'block'
+        } else {
+            modal2.style.height = '5vh'
+            document.querySelector('.modalTitle2').style.display = 'block'
+            document.querySelector('.modalContent2').style.display= 'none'
+        }
+    })
+    
+    document.querySelector('.openModal3').addEventListener('click', () => {
+        if (modal3.style.height == '5vh') {
+            modal3.style.height = '100vh'
+            document.querySelector('.modalTitle3').style.display = 'none'
+            document.querySelector('.modalContent3').style.display= 'block'
+        } else {
+            modal3.style.height = '5vh'
+            document.querySelector('.modalTitle3').style.display = 'block'
+            document.querySelector('.modalContent3').style.display= 'none'
+        }
+    })
+
+    document.querySelector('.openModal4').addEventListener('click', () => {
+        if (modal4.style.height == '5vh') {
+            modal4.style.height = '100vh'
+            document.querySelector('.modalTitle4').style.display = 'none'
+            document.querySelector('.modalContent4').style.display= 'block'
+        } else {
+            modal4.style.height = '5vh'
+            document.querySelector('.modalTitle4').style.display = 'block'
+            document.querySelector('.modalContent4').style.display= 'none'
+        }
+    })
+
+    toggleClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    })
+    toggleClose2.addEventListener('click', () => {
+        modal2.style.display = 'none';
+    })
+    toggleClose3.addEventListener('click', () => {
+        modal3.style.display = 'none';
+    })
+    toggleClose4.addEventListener('click', () => {
+        modal4.style.display = 'none';
+    })
+    
     document.addEventListener("click", function(event) {
           if (
             event.target.matches(".toggleClose") ||
@@ -558,7 +581,7 @@ if (mediaQueryListDesktop.matches) {
         } else { 
             document.body.style.cursor = 'default' 
         }
-
+        
         // planets rotation
         planet1.rotation.x += 0.008
         planet1.rotation.y += 0.008
