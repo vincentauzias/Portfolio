@@ -282,7 +282,6 @@ if (mediaQueryListDesktop.matches) {
                         })
                         gsap.to(camera.position, {
                             duration: 2,
-                            transformOrigin: "center center",
                             x: -1,
                             y: 0,
                             z: -1,
@@ -305,7 +304,6 @@ if (mediaQueryListDesktop.matches) {
                         })
                         gsap.to(camera.position, {
                             duration: 2,
-                            transformOrigin: "center center",
                             x: -1,
                             y: 0,
                             z: -1,
@@ -328,7 +326,6 @@ if (mediaQueryListDesktop.matches) {
                         })
                         gsap.to(camera.position, {
                             duration: 2,
-                            transformOrigin: "center center",
                             x: -1,
                             y: 0,
                             z: -1,
@@ -351,7 +348,6 @@ if (mediaQueryListDesktop.matches) {
                         })
                         gsap.to(camera.position, {
                             duration: 2,
-                            transformOrigin: "center center",
                             x: -1,
                             y: 0,
                             z: -1,
@@ -678,10 +674,40 @@ if (mediaQueryListDesktop.matches) {
         } else if (explorer) {
             gsap.to(camera.position, {
                 duration: 2,
+                x: 3,
+                y: 3,
                 z: explorer ? 20 : 3,
                 ease: 'power3.inOut',
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
+            gsap.to(planet1.position, {
+                duration: 2,
+                x: -2,
+                y: 2,
+                z: 0,
+                ease: 'power3.inOut'
+            })
+            gsap.to(planet4.position, {
+                duration: 2,
+                x: 1.5,
+                y: 1,
+                z: -2.5,
+                ease: 'power3.inOut'
+            })
+            gsap.to(planet3.position, {
+                duration: 2,
+                x: -2.5,
+                y: -1,
+                z: 2,
+                ease: 'power3.inOut'
+            })
+            gsap.to(planet4.position, {
+                duration: 2,
+                x: 1.5,
+                y: 1,
+                z: -2.5,
+                ease: 'power3.inOut'
+            })
         }
         
     })
