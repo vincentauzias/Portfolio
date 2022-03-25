@@ -57,9 +57,6 @@ if (mediaQueryListDesktop.matches) {
     const p4RoughnessTexture = textureLoader.load('/assets/p4_roughness.webp')
     const p4AlbedoTexture = textureLoader.load('/assets/p4_albedo.webp')
 
-
-
-
     /**
      *  Lights
      */
@@ -276,6 +273,21 @@ if (mediaQueryListDesktop.matches) {
                 case planet1:
                     if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                         modal.style.display = "block"
+                        gsap.to(planet1.position, {
+                            duration: 2,
+                            x: 0,
+                            y: 0,
+                            z: 0,
+                            ease: 'power3.inOut'
+                        })
+                        gsap.to(camera.position, {
+                            duration: 2,
+                            transformOrigin: "center center",
+                            x: -1,
+                            y: 0,
+                            z: -1,
+                            ease: 'power3.inOut'
+                        })
                     } else {
                         modal.style.display = "none"
                     }
@@ -284,6 +296,21 @@ if (mediaQueryListDesktop.matches) {
                 case planet2:
                     if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                         modal2.style.display = "block"
+                        gsap.to(planet2.position, {
+                            duration: 2,
+                            x: 0,
+                            y: 0,
+                            z: 0,
+                            ease: 'power3.inOut'
+                        })
+                        gsap.to(camera.position, {
+                            duration: 2,
+                            transformOrigin: "center center",
+                            x: -1,
+                            y: 0,
+                            z: -1,
+                            ease: 'power3.inOut'
+                        })
                     } else {
                         modal2.style.display = "none"
                     }              
@@ -292,6 +319,21 @@ if (mediaQueryListDesktop.matches) {
                 case planet3:
                     if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                         modal3.style.display = "block"
+                        gsap.to(planet3.position, {
+                            duration: 2,
+                            x: 0,
+                            y: 0,
+                            z: 0,
+                            ease: 'power3.inOut'
+                        })
+                        gsap.to(camera.position, {
+                            duration: 2,
+                            transformOrigin: "center center",
+                            x: -1,
+                            y: 0,
+                            z: -1,
+                            ease: 'power3.inOut'
+                        })
                     } else {
                         modal3.style.display = "none"
                     }
@@ -300,6 +342,21 @@ if (mediaQueryListDesktop.matches) {
                 case planet4:
                     if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
                         modal4.style.display = "block"
+                        gsap.to(planet4.position, {
+                            duration: 2,
+                            x: 0,
+                            y: 0,
+                            z: 0,
+                            ease: 'power3.inOut'
+                        })
+                        gsap.to(camera.position, {
+                            duration: 2,
+                            transformOrigin: "center center",
+                            x: -1,
+                            y: 0,
+                            z: -1,
+                            ease: 'power3.inOut'
+                        })
                     } else {
                         modal4.style.display = "none"
                     }
@@ -317,6 +374,13 @@ if (mediaQueryListDesktop.matches) {
             modal.style.height = '5vh'
             document.querySelector('.modalTitle').style.display = 'block'
             document.querySelector('.modalContent').style.display= 'none'
+            // gsap.to(camera.position, {
+            //     duration: 2,
+            //     x: 3,
+            //     y: 3,
+            //     z: 3,
+            //     ease: 'power3.inOut'
+            // })
         }
     })
 
@@ -329,6 +393,13 @@ if (mediaQueryListDesktop.matches) {
             modal2.style.height = '5vh'
             document.querySelector('.modalTitle2').style.display = 'block'
             document.querySelector('.modalContent2').style.display= 'none'
+            // gsap.to(camera.position, {
+            //     duration: 2,
+            //     x: 3,
+            //     y: 3,
+            //     z: 3,
+            //     ease: 'power3.inOut'
+            // })
         }
     })
     
@@ -341,6 +412,13 @@ if (mediaQueryListDesktop.matches) {
             modal3.style.height = '5vh'
             document.querySelector('.modalTitle3').style.display = 'block'
             document.querySelector('.modalContent3').style.display= 'none'
+            // gsap.to(camera.position, {
+            //     duration: 2,
+            //     x: 3,
+            //     y: 3,
+            //     z: 3,
+            //     ease: 'power3.inOut'
+            // })
         }
     })
 
@@ -353,22 +431,85 @@ if (mediaQueryListDesktop.matches) {
             modal4.style.height = '5vh'
             document.querySelector('.modalTitle4').style.display = 'block'
             document.querySelector('.modalContent4').style.display= 'none'
+            // gsap.to(camera.position, {
+            //     duration: 2,
+            //     x: 3,
+            //     y: 3,
+            //     z: 3,
+            //     ease: 'power3.inOut'
+            // })
         }
     })
 
     toggleClose.addEventListener('click', () => {
         modal.style.display = 'none';
+        gsap.to(planet1.position, {
+            duration: 2,
+            x: -2,
+            y: 2,
+            z: 0,
+            ease: 'power3.inOut'
+        })
+        gsap.to(camera.position, {
+            duration: 2,
+            x: 3,
+            y: 3,
+            z: 3,
+            ease: 'power3.inOut'
+        })
     })
     toggleClose2.addEventListener('click', () => {
         modal2.style.display = 'none';
+        gsap.to(planet2.position, {
+            duration: 2,
+            x: -3,
+            y: 0,
+            z: 2,
+            ease: 'power3.inOut'
+        })
+        gsap.to(camera.position, {
+            duration: 2,
+            x: 3,
+            y: 3,
+            z: 3,
+            ease: 'power3.inOut'
+        })
     })
     toggleClose3.addEventListener('click', () => {
         modal3.style.display = 'none';
+        gsap.to(planet3.position, {
+            duration: 2,
+            x: -2.5,
+            y: -1,
+            z: 2,
+            ease: 'power3.inOut'
+        })
+        gsap.to(camera.position, {
+            duration: 2,
+            x: 3,
+            y: 3,
+            z: 3,
+            ease: 'power3.inOut'
+        })
     })
     toggleClose4.addEventListener('click', () => {
         modal4.style.display = 'none';
+        gsap.to(planet4.position, {
+            duration: 2,
+            x: 1.5,
+            y: 1,
+            z: -2.5,
+            ease: 'power3.inOut'
+        })
+        gsap.to(camera.position, {
+            duration: 2,
+            x: 3,
+            y: 3,
+            z: 3,
+            ease: 'power3.inOut'
+        })
     })
-    
+
     document.addEventListener("click", function(event) {
           if (
             event.target.matches(".toggleClose") ||
@@ -382,6 +523,13 @@ if (mediaQueryListDesktop.matches) {
       
       function closeModal() {
         document.querySelector(".modal").style.display = "none"
+        // gsap.to(camera.position, {
+        //     duration: 2,
+        //     x: 3,
+        //     y: 3,
+        //     z: 3,
+        //     ease: 'power3.inOut'
+        // })
       }
 
     document.addEventListener("click", function(event) {
@@ -397,6 +545,13 @@ if (mediaQueryListDesktop.matches) {
       
       function closeModal2() {
         document.querySelector(".modal2").style.display = "none"
+        // gsap.to(camera.position, {
+        //     duration: 2,
+        //     x: 3,
+        //     y: 3,
+        //     z: 3,
+        //     ease: 'power3.inOut'
+        // })
       }
 
     document.addEventListener("click", function(event) {
@@ -412,6 +567,13 @@ if (mediaQueryListDesktop.matches) {
       
       function closeModal3() {
         document.querySelector(".modal3").style.display = "none"
+        // gsap.to(camera.position, {
+        //     duration: 2,
+        //     x: 3,
+        //     y: 3,
+        //     z: 3,
+        //     ease: 'power3.inOut'
+        // })
       }
 
     document.addEventListener("click", function(event) {
@@ -427,6 +589,13 @@ if (mediaQueryListDesktop.matches) {
       
       function closeModal4() {
         document.querySelector(".modal4").style.display = "none"
+        // gsap.to(camera.position, {
+        //     duration: 2,
+        //     x: 3,
+        //     y: 3,
+        //     z: 3,
+        //     ease: 'power3.inOut'
+        // })
       }
 
     /**
@@ -497,7 +666,7 @@ if (mediaQueryListDesktop.matches) {
      * Explore click
      */
     explore.addEventListener('click', () => {
-        
+        console.log('click');
         explorer = !explorer
         if (!explorer) {
             gsap.to(camera.position, {
