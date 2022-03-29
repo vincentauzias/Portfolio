@@ -29,48 +29,24 @@ body,
 }
 
 .title-container {
-   /* position: absolute;
-    width: 50%;
-    height: auto;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);*/
     padding: 15px;
 } 
 
 
 .title {
-    /* position: absolute;
-    color: whitesmoke;
-    padding-left: 4rem; 
-    position: absolute;
-    width: 50%;
-    height: auto;
-    top: 40%;
-    left: 0;
-    transform: translateY(-50%); */
-    position: relative;
     top: 0;
     left: 0;
     color: whitesmoke;
     font-size: 5rem;
-    /* pointer-events: none; */
-    /* transform: translateY(50%) */
 }
 
 .title h1 {
- 
-    /* font-family: 'Chakra Petch', sans-serif; */
     color: whitesmoke;
     font-size: 5rem;
     pointer-events: none;
-    top:0;
-    left:0;
 }
 
 .title p {
-    position: absolute;
-    /* font-family: 'Chakra Petch', sans-serif; */
     color: whitesmoke;
     font-size: 2rem;
     pointer-events: none;
@@ -78,12 +54,11 @@ body,
 }
 
 .explore {
-    position: absolute;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
     border: none;
-    border-radius: 3px;
+    border-radius: 2px;
     background-color: #0072ff;
     text-transform: uppercase;
     font-family: 'Chakra Petch', sans-serif;
@@ -91,7 +66,7 @@ body,
     z-index: 10;
 }
 
-.name {
+.nameTitle {
     position: relative;
     top: 0;
     left: 0;

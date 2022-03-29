@@ -257,7 +257,6 @@ if (mediaQueryListDesktop.matches) {
      */
     
     const Planets = [planet1, planet2, planet3, planet4]
-    const cl = document.querySelector('.cl')
     const modal1 = document.querySelector('.modal1')
     const modal2 = document.querySelector('.modal2')
     const modal3 = document.querySelector('.modal3')
@@ -332,11 +331,13 @@ if (mediaQueryListDesktop.matches) {
                 modal.style.height = '100vh'
                 modalTitle.style.display = 'none'
                 modalContent.style.display= 'block'
-                
+                openModal.style.display = 'none'
             } else {
                 modal.style.height = '5vh'
                 modalTitle.style.display = 'block'
                 modalContent.style.display= 'none'
+                modal.style.display = 'none'
+                
                 gsap.to(planet.position, {
                     duration: 2,
                     x: planetPositionX,
@@ -466,7 +467,9 @@ if (mediaQueryListDesktop.matches) {
     const explore = document.querySelector('.explore')
     let explorer = true
     const homeTitle = document.querySelector('.homeTitle')
-    const name = document.querySelector('.name')
+    const homeSubTitle = document.querySelector('.homeSubTitle')
+    const nameTitle = document.querySelector('.nameTitle')
+    const nameSubTitle = document.querySelector('.nameSubTitle')
 
     /**
      * Camera
@@ -491,7 +494,9 @@ if (mediaQueryListDesktop.matches) {
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
             homeTitle.style.display = 'none'
-            name.style.display = 'block'
+            homeSubTitle.style.display = 'none'
+            nameTitle.style.display = 'block'
+            nameSubTitle.style.display = 'block'
 
         } else if (explorer) {
             gsap.to(camera.position, {
@@ -503,7 +508,9 @@ if (mediaQueryListDesktop.matches) {
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
             homeTitle.style.display = 'block'
-            name.style.display = 'none'
+            homeSubTitle.style.display = 'block'
+            nameTitle.style.display = 'none'
+            nameSubTitle.style.display = 'none'
             gsap.to(planet1.position, {
                 duration: 2,
                 x: -2,
@@ -641,11 +648,11 @@ if (mediaQueryListDesktop.matches) {
     // Canvas
     const canvas = document.querySelector('canvas.webgl')
 
-    const modal = document.querySelector('.modal')
+    const modal1 = document.querySelector('.modal1')
     const modal2 = document.querySelector('.modal2')
     const modal3 = document.querySelector('.modal3')
     const modal4 = document.querySelector('.modal4')
-    modal.style.display = "block"
+    modal1.style.display = "block"
     modal2.style.display = "block"
     modal3.style.display = "block"
     modal4.style.display = "block"
