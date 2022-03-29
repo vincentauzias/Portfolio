@@ -255,6 +255,8 @@ if (mediaQueryListDesktop.matches) {
     /**
      *  Modal events
      */
+    
+    const Planets = [planet1, planet2, planet3, planet4]
     const cl = document.querySelector('.cl')
     const modal1 = document.querySelector('.modal1')
     const modal2 = document.querySelector('.modal2')
@@ -282,9 +284,6 @@ if (mediaQueryListDesktop.matches) {
     let toggleClose4 = document.querySelector('.toggle-close4')
     let toggleCloses = [toggleClose1, toggleClose2, toggleClose3, toggleClose4]
 
-    
-
-    const Planets = [planet1, planet2, planet3, planet4]
     for ( let i in Planets) {
 
         let planet = Planets[i]
@@ -297,7 +296,6 @@ if (mediaQueryListDesktop.matches) {
         let modalContent = modalContents[i]
         let toggleClose = toggleCloses[i]
 
-        // console.log(`${i} : ${planetPositionX} ${planetPositionY} ${planetPositionZ}`);
         window.addEventListener('click', () =>
         {
             if(currentIntersect)
@@ -305,7 +303,7 @@ if (mediaQueryListDesktop.matches) {
                 switch(currentIntersect.object)
                 {
                     case planet:
-                        if(camera.position.z < 4 && camera.position.y > 1 && modal.style.display == "none") {
+                        if(camera.position.z < 4 && camera.position.z > 1 && modal.style.display == "none") {
                             modal.style.display = "block"
                             gsap.to(planet.position, {
                                 duration: 2,
@@ -334,10 +332,18 @@ if (mediaQueryListDesktop.matches) {
                 modal.style.height = '100vh'
                 modalTitle.style.display = 'none'
                 modalContent.style.display= 'block'
+                
             } else {
                 modal.style.height = '5vh'
                 modalTitle.style.display = 'block'
                 modalContent.style.display= 'none'
+                gsap.to(planet.position, {
+                    duration: 2,
+                    x: planetPositionX,
+                    y: planetPositionY,
+                    z: planetPositionZ,
+                    ease: 'power3.inOut'
+                })
                 gsap.to(camera.position, {
                     duration: 2,
                     x: 3,
@@ -368,22 +374,22 @@ if (mediaQueryListDesktop.matches) {
 
          document.addEventListener("click", function(event) {
             if (
-            //   event.target.matches(toggleClose) ||
-            //   !event.target.closest(modal) &&
-            //   camera.position.z < 4
             toggleClose.isSameNode(event.target) 
             || toggleClose.contains(event.target)
             && camera.position.z < 4
             ) {
               closeModal()
             } else if 
-                (!modal.contains(event.target)
-            && camera.position.z < 1)
+                (!modal1.contains(event.target)
+                &&!modal2.contains(event.target)
+                &&!modal3.contains(event.target)
+                &&!modal4.contains(event.target)
+                && camera.position.z < 1)
             {
               closeModal()
-            }
             
-          },
+            
+         }},
           false
         )
         
@@ -459,6 +465,8 @@ if (mediaQueryListDesktop.matches) {
      */
     const explore = document.querySelector('.explore')
     let explorer = true
+    const homeTitle = document.querySelector('.homeTitle')
+    const name = document.querySelector('.name')
 
     /**
      * Camera
@@ -474,7 +482,6 @@ if (mediaQueryListDesktop.matches) {
      * Explore click
      */
     explore.addEventListener('click', () => {
-        console.log('click');
         explorer = !explorer
         if (!explorer) {
             gsap.to(camera.position, {
@@ -483,6 +490,9 @@ if (mediaQueryListDesktop.matches) {
                 ease: 'power3.inOut',
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
+            homeTitle.style.display = 'none'
+            name.style.display = 'block'
+
         } else if (explorer) {
             gsap.to(camera.position, {
                 duration: 2,
@@ -492,6 +502,8 @@ if (mediaQueryListDesktop.matches) {
                 ease: 'power3.inOut',
             })
             explore.innerHTML = explorer ? "Commencer l'exploration" : "Revenir en arrière"
+            homeTitle.style.display = 'block'
+            name.style.display = 'none'
             gsap.to(planet1.position, {
                 duration: 2,
                 x: -2,
@@ -520,8 +532,7 @@ if (mediaQueryListDesktop.matches) {
                 z: -2.5,
                 ease: 'power3.inOut'
             })
-        }
-        
+        }    
     })
 
     /**
@@ -588,7 +599,22 @@ if (mediaQueryListDesktop.matches) {
         } else { 
             document.body.style.cursor = 'default' 
         }
-        
+
+        //explore button
+        if ( camera.position.z < 1) {
+            explore.style.display = 'none'
+        } else {
+            explore.style.display = 'block'
+        }
+
+        //modal close position.z
+        for ( let i in Modals) {
+            let modal = Modals[i]
+            if (camera.position.z > 4) {
+                modal.style.display= 'none'
+             }
+        }
+
         // planets rotation
         planet1.rotation.x += 0.008
         planet1.rotation.y += 0.008
