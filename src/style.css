@@ -68,7 +68,7 @@ body,
     font-family: 'Chakra Petch', sans-serif;
     color: whitesmoke;
 }
- .modal {
+ .modal1 {
     position: fixed;
     width: 40%;
     top: 0;
@@ -80,7 +80,6 @@ body,
 
  .modal2 {
     position: fixed;
-    height: 5vh;
     width: 40%;
     top: 0;
     right: 0;
@@ -90,7 +89,6 @@ body,
  }
  .modal3 {
     position: fixed;
-    height: 5vh;
     width: 40%;
     top: 0;
     right: 0;
@@ -100,7 +98,6 @@ body,
  }
  .modal4 {
     position: fixed;
-    height: 5vh;
     width: 40%;
     top: 0;
     right: 0;
@@ -219,7 +216,7 @@ body,
         animation-delay: 0s;
     }
     
-    .modal, .modal2, .modal3, .modal4 {
+    .modal1, .modal2, .modal3, .modal4 {
         position: absolute;
         height: 100vh;
         width: 100%;

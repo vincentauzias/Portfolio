@@ -255,344 +255,156 @@ if (mediaQueryListDesktop.matches) {
     /**
      *  Modal events
      */
-    const modal = document.querySelector('.modal')
+    const cl = document.querySelector('.cl')
+    const modal1 = document.querySelector('.modal1')
     const modal2 = document.querySelector('.modal2')
     const modal3 = document.querySelector('.modal3')
     const modal4 = document.querySelector('.modal4')
-    let toggleClose = document.querySelector('.toggle-close')
+    const Modals = [modal1, modal2, modal3, modal4]
+    const openModal1 = document.querySelector('.openModal1')
+    const openModal2 = document.querySelector('.openModal2')
+    const openModal3 = document.querySelector('.openModal3')
+    const openModal4 = document.querySelector('.openModal4')
+    const openModals = [openModal1, openModal2, openModal3, openModal4]
+    const modalTitle1 = document.querySelector('.modalTitle1')
+    const modalTitle2 = document.querySelector('.modalTitle2')
+    const modalTitle3 = document.querySelector('.modalTitle3')
+    const modalTitle4 = document.querySelector('.modalTitle4')
+    const modalTitles = [modalTitle1, modalTitle2, modalTitle3, modalTitle4]
+    const modalContent1 = document.querySelector('.modalContent1')
+    const modalContent2 = document.querySelector('.modalContent2')
+    const modalContent3 = document.querySelector('.modalContent3')
+    const modalContent4 = document.querySelector('.modalContent4')
+    const modalContents = [modalContent1, modalContent2, modalContent3, modalContent4]
+    let toggleClose1 = document.querySelector('.toggle-close1')
     let toggleClose2 = document.querySelector('.toggle-close2')
     let toggleClose3 = document.querySelector('.toggle-close3')
     let toggleClose4 = document.querySelector('.toggle-close4')
+    let toggleCloses = [toggleClose1, toggleClose2, toggleClose3, toggleClose4]
 
-    window.addEventListener('click', () =>
-    {
-        if(currentIntersect)
-        {
-            switch(currentIntersect.object)
-            {
-                case planet1:
-                    if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
-                        modal.style.display = "block"
-                        gsap.to(planet1.position, {
-                            duration: 2,
-                            x: 0,
-                            y: 0,
-                            z: 0,
-                            ease: 'power3.inOut'
-                        })
-                        gsap.to(camera.position, {
-                            duration: 2,
-                            x: -1,
-                            y: 0,
-                            z: -1,
-                            ease: 'power3.inOut'
-                        })
-                    } else {
-                        modal.style.display = "none"
-                    }
-                    break
-
-                case planet2:
-                    if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
-                        modal2.style.display = "block"
-                        gsap.to(planet2.position, {
-                            duration: 2,
-                            x: 0,
-                            y: 0,
-                            z: 0,
-                            ease: 'power3.inOut'
-                        })
-                        gsap.to(camera.position, {
-                            duration: 2,
-                            x: -1,
-                            y: 0,
-                            z: -1,
-                            ease: 'power3.inOut'
-                        })
-                    } else {
-                        modal2.style.display = "none"
-                    }              
-                    break
-
-                case planet3:
-                    if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
-                        modal3.style.display = "block"
-                        gsap.to(planet3.position, {
-                            duration: 2,
-                            x: 0,
-                            y: 0,
-                            z: 0,
-                            ease: 'power3.inOut'
-                        })
-                        gsap.to(camera.position, {
-                            duration: 2,
-                            x: -1,
-                            y: 0,
-                            z: -1,
-                            ease: 'power3.inOut'
-                        })
-                    } else {
-                        modal3.style.display = "none"
-                    }
-                    break
-
-                case planet4:
-                    if(camera.position.z < 4 && modal4.style.display == "none" &&  modal3.style.display == "none" && modal2.style.display == "none" && modal.style.display == "none" ) {
-                        modal4.style.display = "block"
-                        gsap.to(planet4.position, {
-                            duration: 2,
-                            x: 0,
-                            y: 0,
-                            z: 0,
-                            ease: 'power3.inOut'
-                        })
-                        gsap.to(camera.position, {
-                            duration: 2,
-                            x: -1,
-                            y: 0,
-                            z: -1,
-                            ease: 'power3.inOut'
-                        })
-                    } else {
-                        modal4.style.display = "none"
-                    }
-                    break
-            }
-        }
-    })
-
-    document.querySelector('.openModal').addEventListener('click', () => {
-        if (modal.style.height == '5vh') {
-            modal.style.height = '100vh'
-            document.querySelector('.modalTitle').style.display = 'none'
-            document.querySelector('.modalContent').style.display= 'block'
-        } else {
-            modal.style.height = '5vh'
-            document.querySelector('.modalTitle').style.display = 'block'
-            document.querySelector('.modalContent').style.display= 'none'
-            // gsap.to(camera.position, {
-            //     duration: 2,
-            //     x: 3,
-            //     y: 3,
-            //     z: 3,
-            //     ease: 'power3.inOut'
-            // })
-        }
-    })
-
-    document.querySelector('.openModal2').addEventListener('click', () => {
-        if (modal2.style.height == '5vh') {
-            modal2.style.height = '100vh'
-            document.querySelector('.modalTitle2').style.display = 'none'
-            document.querySelector('.modalContent2').style.display= 'block'
-        } else {
-            modal2.style.height = '5vh'
-            document.querySelector('.modalTitle2').style.display = 'block'
-            document.querySelector('.modalContent2').style.display= 'none'
-            // gsap.to(camera.position, {
-            //     duration: 2,
-            //     x: 3,
-            //     y: 3,
-            //     z: 3,
-            //     ease: 'power3.inOut'
-            // })
-        }
-    })
     
-    document.querySelector('.openModal3').addEventListener('click', () => {
-        if (modal3.style.height == '5vh') {
-            modal3.style.height = '100vh'
-            document.querySelector('.modalTitle3').style.display = 'none'
-            document.querySelector('.modalContent3').style.display= 'block'
-        } else {
-            modal3.style.height = '5vh'
-            document.querySelector('.modalTitle3').style.display = 'block'
-            document.querySelector('.modalContent3').style.display= 'none'
-            // gsap.to(camera.position, {
-            //     duration: 2,
-            //     x: 3,
-            //     y: 3,
-            //     z: 3,
-            //     ease: 'power3.inOut'
-            // })
+
+    const Planets = [planet1, planet2, planet3, planet4]
+    for ( let i in Planets) {
+
+        let planet = Planets[i]
+        let planetPositionX = Planets[i].position.x;
+        let planetPositionY = Planets[i].position.y;
+        let planetPositionZ = Planets[i].position.z;
+        let modal = Modals[i]
+        let openModal = openModals[i]
+        let modalTitle = modalTitles[i]
+        let modalContent = modalContents[i]
+        let toggleClose = toggleCloses[i]
+
+        // console.log(`${i} : ${planetPositionX} ${planetPositionY} ${planetPositionZ}`);
+        window.addEventListener('click', () =>
+        {
+            if(currentIntersect)
+            {
+                switch(currentIntersect.object)
+                {
+                    case planet:
+                        if(camera.position.z < 4 && camera.position.y > 1 && modal.style.display == "none") {
+                            modal.style.display = "block"
+                            gsap.to(planet.position, {
+                                duration: 2,
+                                x: 0,
+                                y: 0,
+                                z: 0,
+                                ease: 'power3.inOut'
+                            })
+                            gsap.to(camera.position, {
+                                duration: 2,
+                                x: -1,
+                                y: 0,
+                                z: -1,
+                                ease: 'power3.inOut'
+                            })
+                        } else {
+                            modal.style.display = "none"
+                        }
+                        break
+                }
+            }
+        })
+
+        openModal.addEventListener('click', () => {
+            if (modal.style.height == '5vh') {
+                modal.style.height = '100vh'
+                modalTitle.style.display = 'none'
+                modalContent.style.display= 'block'
+            } else {
+                modal.style.height = '5vh'
+                modalTitle.style.display = 'block'
+                modalContent.style.display= 'none'
+                gsap.to(camera.position, {
+                    duration: 2,
+                    x: 3,
+                    y: 3,
+                    z: 3,
+                    ease: 'power3.inOut'
+                })
+            }
+        })
+
+        toggleClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            gsap.to(planet.position, {
+                duration: 2,
+                x: planetPositionX,
+                y: planetPositionY,
+                z: planetPositionZ,
+                ease: 'power3.inOut'
+            })
+            gsap.to(camera.position, {
+                duration: 2,
+                x: 3,
+                y: 3,
+                z: 3,
+                ease: 'power3.inOut'
+            })
+         })
+
+         document.addEventListener("click", function(event) {
+            if (
+            //   event.target.matches(toggleClose) ||
+            //   !event.target.closest(modal) &&
+            //   camera.position.z < 4
+            toggleClose.isSameNode(event.target) 
+            || toggleClose.contains(event.target)
+            && camera.position.z < 4
+            ) {
+              closeModal()
+            } else if 
+                (!modal.contains(event.target)
+            && camera.position.z < 1)
+            {
+              closeModal()
+            }
+            
+          },
+          false
+        )
+        
+       function closeModal() {
+            modal.style.display = "none"
+            gsap.to(planet.position, {
+                duration: 2,
+                x: planetPositionX,
+                y: planetPositionY,
+                z: planetPositionZ,
+                ease: 'power3.inOut'
+            })
+            gsap.to(camera.position, {
+                duration: 2,
+                x: 3,
+                y: 3,
+                z: 3,
+                ease: 'power3.inOut'
+            })
         }
-    })
-
-    document.querySelector('.openModal4').addEventListener('click', () => {
-        if (modal4.style.height == '5vh') {
-            modal4.style.height = '100vh'
-            document.querySelector('.modalTitle4').style.display = 'none'
-            document.querySelector('.modalContent4').style.display= 'block'
-        } else {
-            modal4.style.height = '5vh'
-            document.querySelector('.modalTitle4').style.display = 'block'
-            document.querySelector('.modalContent4').style.display= 'none'
-            // gsap.to(camera.position, {
-            //     duration: 2,
-            //     x: 3,
-            //     y: 3,
-            //     z: 3,
-            //     ease: 'power3.inOut'
-            // })
-        }
-    })
-
-    toggleClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-        gsap.to(planet1.position, {
-            duration: 2,
-            x: -2,
-            y: 2,
-            z: 0,
-            ease: 'power3.inOut'
-        })
-        gsap.to(camera.position, {
-            duration: 2,
-            x: 3,
-            y: 3,
-            z: 3,
-            ease: 'power3.inOut'
-        })
-    })
-    toggleClose2.addEventListener('click', () => {
-        modal2.style.display = 'none';
-        gsap.to(planet2.position, {
-            duration: 2,
-            x: -3,
-            y: 0,
-            z: 2,
-            ease: 'power3.inOut'
-        })
-        gsap.to(camera.position, {
-            duration: 2,
-            x: 3,
-            y: 3,
-            z: 3,
-            ease: 'power3.inOut'
-        })
-    })
-    toggleClose3.addEventListener('click', () => {
-        modal3.style.display = 'none';
-        gsap.to(planet3.position, {
-            duration: 2,
-            x: -2.5,
-            y: -1,
-            z: 2,
-            ease: 'power3.inOut'
-        })
-        gsap.to(camera.position, {
-            duration: 2,
-            x: 3,
-            y: 3,
-            z: 3,
-            ease: 'power3.inOut'
-        })
-    })
-    toggleClose4.addEventListener('click', () => {
-        modal4.style.display = 'none';
-        gsap.to(planet4.position, {
-            duration: 2,
-            x: 1.5,
-            y: 1,
-            z: -2.5,
-            ease: 'power3.inOut'
-        })
-        gsap.to(camera.position, {
-            duration: 2,
-            x: 3,
-            y: 3,
-            z: 3,
-            ease: 'power3.inOut'
-        })
-    })
-
-    document.addEventListener("click", function(event) {
-          if (
-            event.target.matches(".toggleClose") ||
-            !event.target.closest(".modal")
-          ) {
-            closeModal()
-          }
-        },
-        false
-      )
-      
-      function closeModal() {
-        document.querySelector(".modal").style.display = "none"
-        // gsap.to(camera.position, {
-        //     duration: 2,
-        //     x: 3,
-        //     y: 3,
-        //     z: 3,
-        //     ease: 'power3.inOut'
-        // })
-      }
-
-    document.addEventListener("click", function(event) {
-          if (
-            event.target.matches(".toggleClose2") ||
-            !event.target.closest(".modal2")
-          ) {
-            closeModal2()
-          }
-        },
-        false
-      )
-      
-      function closeModal2() {
-        document.querySelector(".modal2").style.display = "none"
-        // gsap.to(camera.position, {
-        //     duration: 2,
-        //     x: 3,
-        //     y: 3,
-        //     z: 3,
-        //     ease: 'power3.inOut'
-        // })
-      }
-
-    document.addEventListener("click", function(event) {
-          if (
-            event.target.matches(".toggleClose3") ||
-            !event.target.closest(".modal3")
-          ) {
-            closeModal3()
-          }
-        },
-        false
-      )
-      
-      function closeModal3() {
-        document.querySelector(".modal3").style.display = "none"
-        // gsap.to(camera.position, {
-        //     duration: 2,
-        //     x: 3,
-        //     y: 3,
-        //     z: 3,
-        //     ease: 'power3.inOut'
-        // })
-      }
-
-    document.addEventListener("click", function(event) {
-          if (
-            event.target.matches(".toggleClose4") ||
-            !event.target.closest(".modal4")
-          ) {
-            closeModal4()
-          }
-        },
-        false
-      )
-      
-      function closeModal4() {
-        document.querySelector(".modal4").style.display = "none"
-        // gsap.to(camera.position, {
-        //     duration: 2,
-        //     x: 3,
-        //     y: 3,
-        //     z: 3,
-        //     ease: 'power3.inOut'
-        // })
-      }
+    }
 
     /**
      *  Group
@@ -687,16 +499,16 @@ if (mediaQueryListDesktop.matches) {
                 z: 0,
                 ease: 'power3.inOut'
             })
-            gsap.to(planet4.position, {
+            gsap.to(planet2.position, {
                 duration: 2,
-                x: 1.5,
-                y: 1,
-                z: -2.5,
+                x: -3,
+                y: 0,
+                z: -2,
                 ease: 'power3.inOut'
             })
             gsap.to(planet3.position, {
                 duration: 2,
-                x: -2.5,
+                x: 2.5,
                 y: -1,
                 z: 2,
                 ease: 'power3.inOut'
@@ -746,7 +558,7 @@ if (mediaQueryListDesktop.matches) {
 
     const tick = () =>
     {
-        const elapsedTime = clock.getElapsedTime()
+        // const elapsedTime = clock.getElapsedTime()
 
         // Cast a ray
         raycaster.setFromCamera(mouse, camera)
